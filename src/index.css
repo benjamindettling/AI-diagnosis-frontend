@@ -1,0 +1,51 @@
+:root {
+  background-color: #2b384d;
+  --spacing: 1rem;
+  --border-color: #a0a0a0;
+}
+
+/* Style for definition list */
+dl {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+dt,
+dd {
+  line-height: 1.42857143;
+}
+dt {
+  font-weight: 700;
+}
+dd {
+  margin-left: 0;
+}
+
+
+
+button:hover {
+  background-color: #4d2e84;
+}
+
+ul, p{
+  color: black;
+}
+
+/* Footer.css */
+.footer {
+  background-color: #b9dcff;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  align-self: flex-end;
+}
+
+.footer-content {
+
+  margin: 3px auto;
+
+  max-width: 1200px;
+
+}
+
+
+

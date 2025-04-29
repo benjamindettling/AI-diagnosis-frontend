@@ -1,0 +1,250 @@
+.app-container {
+  background-color: #2b384d;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  /* fallback height */
+  min-height:100vh;
+
+  /* new small viewport height for modern browsers */
+  min-height:100svh;
+}
+
+.ddl {
+  flex: 1 1 30%;
+  max-width: 100%;
+}
+
+.chat-interface {
+  max-height:800px;
+  overflow-y: auto;
+  flex: 1 1 65%;
+  max-width: 100%;
+  padding: 20px;
+  border: 1px solid #e8e0e0;
+  border-radius: 10px;
+  background-color: #2b384d;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.button {
+  background-color: #6a5acd;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.button:last-child {
+  margin-right: 0;
+}
+
+.text-white {
+  color: white;
+}
+
+.chat-text {
+
+  color: white;
+}
+
+.selected-symptoms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.symptom-chip {
+  background-color: #6090B8;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.remove-chip {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+/* Dropdown Container */
+.dropdown-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Search Bar */
+.dropdown-container input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Search and Toggle Button Section */
+.search-and-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Toggle Button Styling */
+.toggle-button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.toggle-button:hover {
+  background-color: #0056b3;
+}
+
+.symptoms-container {
+  position: relative; /* The parent container to position the symptom list absolutely */
+}
+
+
+.symptom-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  list-style-type: none;
+}
+
+/* Individual Symptom Items */
+.symptom-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  border-bottom: 1px solid #eee;
+}
+
+.symptom-item:last-child {
+  border-bottom: none; 
+}
+
+.symptom-item:hover {
+  background-color: #f0f0f0;
+}
+
+.symptom-item.selected {
+  background-color: #6090B8;
+  color: white;
+}
+
+/* No Symptoms Found */
+.no-symptoms {
+  text-align: center;
+  color: gray;
+  font-style: italic;
+}
+
+/* Chart Container */
+.chart-container {
+  margin-top: 20px;
+  height: 300px;
+  border: 1px solid #13dde1;
+  background-color: #e5e6e7;
+}
+
+.input-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-fields label {
+  font-size: 18px;
+  color: white;
+}
+
+.input-fields input, .input-fields select {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* WebKit-based browsers like Chrome, Safari, Edge */
+input[type="range"]::-webkit-slider-thumb {
+
+  background-color: #6a5acd;
+
+}
+
+.history-container {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #cad9e8;
+  border-radius: 10px;
+  color: white;
+}
+
+.history-summary {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+.history-table th, .history-table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.history-table th {
+  background-color: rgb(96, 144, 184);
+}
+
+.history-table tr:nth-child(even) {
+  background-color: #2c3e50;
+}
+
+.history-table tr.selected-entry {
+  background-color: #27ae60;
+}
+
+.history-card {
+  background-color: rgb(96, 144, 184);
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.differing-inputs-notice {
+  font-size: 1.1em;
+  color: black;
+  background-color: rgba(255,242,0,0.8);
+  margin-bottom: 1rem;
+
+  display: inline;
+}
+
+.differing-inputs-notice strong {
+  font-weight: bold;
+}

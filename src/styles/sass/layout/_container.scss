@@ -1,0 +1,12 @@
+@use "../abstracts/mixins";
+
+.container {
+  width: 100vw;
+  max-width: 1140px;
+  padding: 0 3rem; // optional: horizontal padding for spacing
+  padding-top: 4rem;
+
+  @include mixins.respond(phone) {
+    padding: 0 1rem;
+  }
+}

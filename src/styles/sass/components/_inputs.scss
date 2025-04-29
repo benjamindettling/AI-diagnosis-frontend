@@ -1,0 +1,131 @@
+@use "../abstracts/variables";
+
+.input {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid variables.$light-grey;
+  font-size: 1.5rem;
+  width: 100%;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: variables.$white-color;
+  color: variables.$dark-grey;
+
+  &::placeholder {
+    color: variables.$light-grey;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: variables.$primary-color;
+    box-shadow: 0 0 0 3px rgba(variables.$primary-color, 0.2);
+  }
+}
+
+.input-panel {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #2b384d;
+
+  label {
+    color: #2b384d;
+    font-weight: bold;
+  }
+
+  input,
+  select {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+}
+
+.input-panel__heading {
+  font-size: 1.5rem;
+  color: #2b384d;
+  margin-bottom: 1.5rem;
+}
+
+.selected-symptoms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.symptom-chip {
+  background-color: variables.$primary-color;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.remove-chip {
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.selected-symptoms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.symptom-chip {
+  background-color: variables.$primary-color;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.remove-chip {
+  margin-left: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.selected-symptoms-list {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.selected-symptoms-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--text-color, #2b384d);
+}
+
+.selected-symptoms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.symptom-chip {
+  background-color: variables.$primary-color;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.remove-chip {
+  margin-left: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}

@@ -1,0 +1,22 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+.main-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  
+    background: linear-gradient(120deg, variables.$primary-color, variables.$secondary-color);
+  }
+  
+  
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr; // left 33%, right 66%
+    gap: 2rem;
+    padding: 2rem;
+    align-items: flex-start;
+  }
+
+  
+  
