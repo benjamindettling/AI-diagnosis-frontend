@@ -43,9 +43,7 @@ const ChartPanel: React.FC<ChartPanelProps> = ({ chartData }) => {
   const [history, setHistory] = useState<DiagnosisResponse[]>([]);
   const [showHistory, setShowHistory] = useState<boolean>(false);
   const [selectedIndices, setSelectedIndices] = useState<number[]>([]);
-  const [comparisonCharts, setComparisonCharts] = useState<
-    ChartData<"bar">[] | null
-  >(null);
+
   const [mergedChart, setMergedChart] = useState<ChartData<"bar"> | null>(null);
 
   useEffect(() => {
@@ -63,6 +61,18 @@ const ChartPanel: React.FC<ChartPanelProps> = ({ chartData }) => {
     setSelectedIndices((prev) =>
       prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
     );
+  };
+
+  const handleClearHistory = async () => {
+    try {
+      await axios.delete("http://localhost:3001/clear-history");
+      setHistory([]);
+      setSelectedIndices([]);
+      setMergedChart(null);
+      console.log("History cleared");
+    } catch (error) {
+      console.error("Error clearing history:", error);
+    }
   };
 
   const mergeSelectedHistories = () => {
@@ -192,22 +202,22 @@ const ChartPanel: React.FC<ChartPanelProps> = ({ chartData }) => {
             </tbody>
           </table>
 
-          <button
-            className="cta-btn cta-btn--hero"
-            onClick={mergeSelectedHistories}
-          >
-            Compare
-          </button>
+          <div className="history-action-buttons">
+            <button
+              className="cta-btn cta-btn--hero"
+              onClick={mergeSelectedHistories}
+            >
+              Compare
+            </button>
+            <button
+              className="cta-btn cta-btn--hero"
+              onClick={handleClearHistory}
+            >
+              Clear History
+            </button>
+          </div>
         </>
       )}
-
-      {comparisonCharts &&
-        comparisonCharts.map((chart, idx) => (
-          <div key={idx} style={{ marginTop: "20px" }}>
-            <h3>Comparison {idx + 1}</h3>
-            <Bar data={chart} options={chartOptions} />
-          </div>
-        ))}
 
       {mergedChart && (
         <div style={{ width: "100%", height: "400px", marginTop: "20px" }}>

@@ -60,24 +60,6 @@ const InputPanel: React.FC<InputPanelProps> = ({ setChartData }) => {
     }
   };
 
-  const handleShowHistory = async () => {
-    try {
-      const response = await axios.get("http://localhost:3001/storage");
-      console.log("History:", response.data);
-    } catch (error) {
-      console.error("Error fetching history:", error);
-    }
-  };
-
-  const handleClearHistory = async () => {
-    try {
-      await axios.delete("http://localhost:3001/clear-history");
-      console.log("History cleared");
-    } catch (error) {
-      console.error("Error clearing history:", error);
-    }
-  };
-
   return (
     <div className="input-panel">
       <h2 className="input-panel__heading">Select Your Symptoms</h2>

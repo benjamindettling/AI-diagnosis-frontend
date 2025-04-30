@@ -181,10 +181,6 @@ const DDL: React.FC<DDLProps> = ({ selectedSymptoms, onSymptomSelect }) => {
     }
   }, [searchTerm]);
 
-  const toggleListVisibility = () => {
-    setIsListVisible(!isListVisible);
-  };
-
   return (
     <div className="symptom-search-block">
       <div className="symptom-input-wrapper">

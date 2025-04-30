@@ -40,9 +40,11 @@
   }
 }
 
-
 .cta-btn--hero {
-  @include mixins.button-variant(variables.$primary-color, variables.$secondary-color);
+  @include mixins.button-variant(
+    variables.$primary-color,
+    variables.$secondary-color
+  );
 }
 
 .cta-btn--purple {
@@ -52,9 +54,6 @@
 .cta-btn--red {
   @include mixins.button-variant(#ab0101, #590000);
 }
-
-
-
 
 .cta-btn--resume {
   border: 2px solid variables.$white-color;
@@ -72,7 +71,6 @@
   }
 }
 
-
 /* Arrow Button */
 .up i {
   color: #272727;
@@ -87,4 +85,11 @@
     font-weight: bold;
     font-size: 1.6rem;
   }
+}
+
+.history-action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: center;
 }
