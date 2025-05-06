@@ -82,7 +82,9 @@ const ChartPanel: React.FC<ChartPanelProps> = ({ chartData }) => {
     if (selectedHistories.length === 0) return;
 
     const diagnosisSet = new Set(
-      selectedHistories.flatMap((entry) => entry.diagnoses.map((d) => d.name))
+      selectedHistories.flatMap((entry) =>
+        (entry.diagnoses || []).map((d) => d.name)
+      )
     );
 
     const labels = Array.from(diagnosisSet);
