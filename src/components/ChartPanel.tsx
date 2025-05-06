@@ -49,7 +49,7 @@ const ChartPanel: React.FC<ChartPanelProps> = ({ chartData }) => {
   useEffect(() => {
     if (showHistory) {
       axios
-        .get("http://localhost:3001/storage")
+        .get(`${import.meta.env.VITE_API_URL}/storage`)
         .then((response) => {
           setHistory(response.data);
         })
@@ -65,7 +65,7 @@ const ChartPanel: React.FC<ChartPanelProps> = ({ chartData }) => {
 
   const handleClearHistory = async () => {
     try {
-      await axios.delete("http://localhost:3001/clear-history");
+      await axios.delete(`${import.meta.env.VITE_API_URL}/clear-history`);
       setHistory([]);
       setSelectedIndices([]);
       setMergedChart(null);

@@ -164,9 +164,12 @@ const DDL: React.FC<DDLProps> = ({ selectedSymptoms, onSymptomSelect }) => {
 
   const fetchSymptomsFromGPT = async (input: string) => {
     try {
-      const response = await axios.post("http://localhost:3001/query", {
-        query: input,
-      });
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/query`,
+        {
+          query: input,
+        }
+      );
       const newSymptoms: string[] = response.data.symptoms || [];
 
       setSymptomsList((prev) => Array.from(new Set([...newSymptoms, ...prev])));

@@ -30,7 +30,7 @@ const InputPanel: React.FC<InputPanelProps> = ({ setChartData }) => {
 
     try {
       const response = await axios.post(
-        "https://ai-diagnosis-backend-0ams.onrender.com/diagnose",
+        `${import.meta.env.VITE_API_URL}/diagnose`,
         {
           symptom: selectedSymptoms.join(", "),
           age,
