@@ -29,12 +29,15 @@ const InputPanel: React.FC<InputPanelProps> = ({ setChartData }) => {
     }
 
     try {
-      const response = await axios.post("http://localhost:3001/diagnose", {
-        symptom: selectedSymptoms.join(", "),
-        age,
-        gender,
-        Ethnicity: ethnicity,
-      });
+      const response = await axios.post(
+        "https://ai-diagnosis-backend-0ams.onrender.com/diagnose",
+        {
+          symptom: selectedSymptoms.join(", "),
+          age,
+          gender,
+          Ethnicity: ethnicity,
+        }
+      );
 
       const { diagnoses } = response.data;
       const labels = diagnoses.map((d: any) => d.name);
